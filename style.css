@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #444;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50em;
+  height: 90vh;
+  border: 10px gray solid;
+}
+
+p {
+  display: inline;
+}
+
+input {
+  background: transparent;
+  font-size: 2em;
+  outline: none;
+  text-align: center;
+  padding: 15px 9px;
+  border: 3px solid gray;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+input::placeholder {
+  font-size: 0.6em;
+  color: rgba(255, 255, 255, 0.479);
+}
+
+button {
+  padding: 20px 40px;
+  font-weight: bold;
+  font-size: 26px;
+  background: transparent;
+  outline: none;
+  border: 2px solid red;
+}
+
+button:first-child {
+  margin-right: 30px;
+}
+
+button:hover {
+  background: gray;
+  color: #fff;
+  cursor: pointer;
+}
+
+#show-case,
+#messages {
+  height: 30%;
+  margin-bottom: 10%;
+}
+
+#messages {
+  display: flex;
+  width: 100%;
+  height: 5vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#buttons {
+  margin-bottom: 30px;
+}
+
+.number {
+  font-size: 9em;
+}
+
+.message {
+  font-size: 3em;
+  margin-left: 20px;
+}
+
+.score,
+.high-score {
+  font-size: 1.6em;
+}
+
+.score {
+  padding-bottom: 10px;
+}
+
+.score p:first-child,
+.high-score p:first-child {
+  padding-right: 20px;
+}
+
+.score p:last-child,
+.high-score p:last-child {
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 425px) {
+  section {
+    width: 80%;
+  }
+
+  input {
+    background: transparent;
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+    padding: 15px 3px;
+    margin-top: -15px;
+  }
+
+  button {
+    /* display: none; */
+    padding: 10px 20px;
+  }
+
+  button:first-child {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  #show-case {
+    height: 20%;
+  }
+
+  #messages {
+    flex-direction: column;
+    height: 20%;
+  }
+
+  #buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .number {
+    font-size: 5em;
+  }
+
+  .message {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .about {
+    margin-bottom: 0.7em;
+  }
+
+  .score,
+  .high-score {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  .score p:last-child,
+  .high-score p:last-child {
+    font-size: 1.2em;
+  }
+}
