@@ -2,9 +2,9 @@
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
-const messageColor = function (color){
-  document.querySelector(".message").style.color = color; 
-}
+const messageColor = function (color) {
+  document.querySelector(".message").style.color = color;
+};
 const bodyBackgroundColor = function (color) {
   document.querySelector("body").style.backgroundColor = color;
 };
@@ -30,35 +30,38 @@ alert("By: Ahmadreza Mozaffary");
 //Check Button
 checkButton.addEventListener("click", () => {
   let value = Number(guessNum.value);
-  if(guessNum.value){
-    if(value <= 20) {
-  if (secretNumber === value) {
-    displayMessage("🎉 Winner");
-    bodyBackgroundColor("green");
-    displaySecretNumber(secretNumber);
-    if (totalScore > highScoreValue) {
-      highScoreValue = totalScore;
-      displayHighscore(highScoreValue);
+  if (guessNum.value) {
+    if (value <= 20 && value > -1) {
+      if (secretNumber === value) {
+        messageColor("");
+        displayMessage("🎉 Winner");
+        bodyBackgroundColor("green");
+        displaySecretNumber(secretNumber);
+        if (totalScore > highScoreValue) {
+          highScoreValue = totalScore;
+          displayHighscore(highScoreValue);
+        }
+      } else if (secretNumber !== value) {
+        messageColor("");
+        displayMessage(value > secretNumber ? "📈 too High !" : "📉 too low !");
+        totalScore--;
+        displayScore(totalScore);
+        if (totalScore < 1) {
+          messageColor("");
+          displayMessage("💔 Lose");
+          bodyBackgroundColor("red");
+          displayScore(0);
+          displaySecretNumber(secretNumber);
+        }
+      }
+    } else {
+      displayMessage(" ⛔️ Out of Rang!");
+      messageColor("yellow");
     }
-  } else if (secretNumber !== value) {
-    displayMessage(value > secretNumber ? "📈 too High !" : "📉 too low !");
-    totalScore--;
-    displayScore(totalScore);
-    if (totalScore < 1) {
-      displayMessage("💔 Lose");
-      bodyBackgroundColor("red");
-      displayScore(0);
-      displaySecretNumber(secretNumber);
-    }
+  } else {
+    displayMessage(" 📣 Enter a Number");
+    messageColor("yellow");
   }
-}else{
-  displayMessage(" ⛔️ Out of Rang!");
-  messageColor('yellow');
-}
-}else {
-  displayMessage(" 📣 Enter a Number");
-  messageColor('yellow');
-}
 });
 
 //Reset ‌Button
@@ -70,7 +73,7 @@ resetButton.addEventListener("click", () => {
   displayScore(totalScore);
   displaySecretNumber("?");
   guessNum.value = "";
-  messageColor('');
+  messageColor("");
 });
 
 // 210 line of code
