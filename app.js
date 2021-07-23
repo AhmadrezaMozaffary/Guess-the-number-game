@@ -55,7 +55,7 @@ checkButton.addEventListener("click", () => {
         }
       }
     } else {
-      displayMessage(" ⛔️ Out of Rang!");
+      displayMessage(" ⛔️ Out of Range!");
       messageColor("yellow");
     }
   } else {
